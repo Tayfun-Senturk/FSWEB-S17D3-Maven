@@ -38,7 +38,7 @@ public class KoalaController {
     @PostMapping("/koalas")
     public Koala addKoala(@RequestBody Koala koala) {
         if(koala.getId() <= 0 || koala.getName() == null || koala.getGender() == null || koala.getSleepHour() == 0.0||koala.getWeight() == 0.0){
-            throw new ZooException("Given information is not valid", HttpStatus.BAD_REQUEST);
+            throw new ZooException("Given information is not  valid", HttpStatus.BAD_REQUEST);
         }
         koalas.put(koala.getId(), koala);
         return koalas.get(koala.getId());
